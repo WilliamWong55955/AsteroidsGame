@@ -1,4 +1,6 @@
 //your variable declarations here
+ArrayList <Asteroids> bilbert;
+ArrayList <Bullets> gilbert;
 Star[]hilbert;
 Spaceship wilbert = new Spaceship();
 public void setup() 
@@ -9,6 +11,11 @@ public void setup()
   for (int i=0; i<hilbert.length; i++){
     hilbert[i]=new Star();
   }
+  bilbert = new ArrayList <Asteroids>();
+  for (int i = 0; i < 8; i++){
+   bilbert.add(new Asteroids());
+  }
+  gilbert = new ArrayList <Bullets>();
   
 }
 public void draw() 
@@ -18,8 +25,16 @@ public void draw()
   for (int i=0; i<hilbert.length; i++){
     hilbert[i].show();  
   }
-  wilbert.move();
+    wilbert.move();
     wilbert.show();
+    for (int i=0; i<bilbert.size(); i++){
+    bilbert.get(i).move();
+    bilbert.get(i).show();    
+  }
+    for (int i = 0; i < gilbert.size(); i++){
+     gilbert.get(i).move();
+     gilbert.get(i).show();
+    }
 
   //your code here
 }
@@ -40,4 +55,6 @@ public void keyPressed()
   wilbert.yCenter();
   wilbert.xCenter();
   }
+  else if(key==' ')
+  gilbert.add(new Bullets(wilbert));
 }
