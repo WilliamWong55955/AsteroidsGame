@@ -27,14 +27,14 @@ class Spaceship extends Floater
      public void yBilbert(){
        myYspeed = 0;
      }
-     public void newDirection(){
-       myPointDirection = (int)(Math.random()*360);
+     public double newDirection(){
+       return myPointDirection;
      }
-     public void xCenter(){
-       myCenterX=(int)(Math.random()*500);
+     public double xCenter(){
+       return myCenterY;
      }
-     public void yCenter(){
-       myCenterY=(int)(Math.random()*500);
+     public double yCenter(){
+       return myCenterY;
      }
      
     
