@@ -14,7 +14,7 @@ class Spaceship extends Floater
   myColor = color (255, 255 ,255); 
   myCenterX=myCenterY =250;
   myXspeed = myYspeed = 0;
-  myPointDirection = (int)(Math.random()*360);
+  myPointDirection = 0.0;
  
   //protected double myCenterX, myCenterY; //holds center coordinates   
   //protected double myXspeed, myYspeed; //holds the speed of travel in the x and y directions   
@@ -23,15 +23,18 @@ class Spaceship extends Floater
     
      public void xBilbert() {
        myXspeed = 0;
+       myCenterX= Math.random()*501;
      }
      public void yBilbert(){
        myYspeed = 0;
+       myCenterY= Math.random()*501;
      }
      public double newDirection(){
+     myPointDirection = Math.random()*361;
        return myPointDirection;
      }
      public double xCenter(){
-       return myCenterY;
+       return myCenterX;
      }
      public double yCenter(){
        return myCenterY;
