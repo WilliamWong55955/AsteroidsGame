@@ -27,10 +27,19 @@ public void draw()
   }
     wilbert.move();
     wilbert.show();
-    for (int i=0; i<bilbert.size(); i++){
+    for (int i=0; i< bilbert.size(); i++){
     bilbert.get(i).move();
     bilbert.get(i).show();    
+    float distance = dist((float)wilbert.xCenter(),(float)wilbert.yCenter(), (float)bilbert.get(i).xCenter(), (float)bilbert.get(i).yCenter());
+    if(distance < 10){
+    bilbert.remove(i);
+    }
+    //else if(dist((float)bilbert.get(i).xCenter(), (float)bilbert.get(i).yCenter(), (float)gilbert.get(i).bulletXcenter(), (float)gilbert.get(i).bulletYcenter())<10){
+      //bilbert.remove(i);
+      //gilbert.remove(i);
+    //}
   }
+    
     for (int i = 0; i < gilbert.size(); i++){
      gilbert.get(i).move();
      gilbert.get(i).show();
@@ -52,8 +61,6 @@ public void keyPressed()
   wilbert.xBilbert();
   wilbert.yBilbert();
   wilbert.newDirection();
-  wilbert.yCenter();
-  wilbert.xCenter();
   }
   else if(key==' ')
   gilbert.add(new Bullets(wilbert));
